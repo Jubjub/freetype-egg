@@ -1,0 +1,13 @@
+;; -*- mode: scheme -*-
+
+(compile -s -O2 -j freetype "-I/usr/local/include/freetype2" "-L/usr/local/lib -lfreetype" freetype.scm)
+(compile -s -O2  freetype.import.scm)
+(compile -c -O2 "-I/usr/local/include/freetype2" "-L/usr/local/lib -lfreetype" -unit freetype freetype.scm)
+
+(install-extension
+ 'freetype
+ '("freetype.setup" "freetype.so" "freetype.import.so" "freetype.o")
+ '((version 0.1)
+   (documentation "freetype.html")
+   (static "freetype.o")
+   (static-options "-L/usr/local/lib -lfreetype" "libfreetype.a")))

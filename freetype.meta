@@ -1,0 +1,11 @@
+;;; freetype.meta -*- Scheme -*-
+
+((egg "freetype.egg")
+ (synopsis
+  "Freetype2 Interface")
+ (category graphics)
+ (needs foreigners matchable)
+ (license "BSD")
+ (files "freetype.scm" "freetype.setup" "freetype.meta")
+ (doc-from-wiki)
+ (author "Alex Shinn"))
